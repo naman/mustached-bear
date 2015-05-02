@@ -13,6 +13,12 @@ urlpatterns = [
 	url(r'^order/$', views.neworder),
 	url(r'^order/(?P<oid>\d+)/$', views.order_edit),
 	url(r'^order/(?P<oid>\d+)/delete/$', views.order_delete),
-	url(r'^query/$', views.query),
+	url(r'^part/$', views.newpart),
+	url(r'^part/(?P<pid>\d+)/$', views.part_edit),
+	url(r'^part/(?P<pid>\d+)/delete/$', views.part_delete),
+	url(r'^orderpart/$', views.order_per_part),
+	url(r'^orderpart/(?P<opid>\d+)/$', views.order_per_part_update),
+	url(r'^orderpart/(?P<opid>\d+)/delete/$', views.order_per_part_delete),
+	url(r'^query/$', views.query ),
 	
 ]

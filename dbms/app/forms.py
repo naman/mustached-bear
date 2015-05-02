@@ -1,6 +1,6 @@
 #all forms here
 from django.forms import ModelForm
-from app.models import Employee, Customer, Order, Order_Part_Quantity, Part
+from app.models import Employee, Customer, Order, Quantity, Part
 
 class EmployeeForm(ModelForm):
     class Meta:
@@ -27,5 +27,5 @@ class PartForm(ModelForm):
 
 class OrderPartQuantityForm(ModelForm):
 	class Meta:
-		model = Order_Part_Quantity
+		model = Quantity
 		fields = ['order_no', 'part_no', 'part_quantity']

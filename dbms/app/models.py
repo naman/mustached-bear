@@ -42,10 +42,10 @@ class Order(models.Model):
 		return str(self.id) + ' ' + self.employee_id.fname + ' ' +  self.customer_id.fname + ' ' + str(self.recv_date) + str(self.ship_date) 
 
 
-class Order_Part_Quantity(models.Model):
+class Quantity(models.Model):
 	order_no = models.ForeignKey(Order)
 	part_quantity = models.IntegerField(blank= False)
 	part_no = models.ForeignKey(Part)
 
-	# def __str__(self):
-		# return self.order_no + ' ' + str(self.part_quantity) + str(self.part_no)  
+	def __str__(self):
+		return str(self.part_quantity) + str(self.part_no)  
