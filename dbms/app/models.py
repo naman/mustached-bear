@@ -28,7 +28,7 @@ class Part(models.Model):
 	max_quantity = models.IntegerField(blank= False) #This is the stock quantity for every part
 
 	def __str__(self):
-		return self.pname
+		return self.pname + ' ' + str(self.price) + ' ' + str(self.max_quantity)   
 
 
 class Order(models.Model):
@@ -39,7 +39,7 @@ class Order(models.Model):
 	ship_date = models.DateTimeField(blank = False)
 
 	def __str__(self):
-		return self.id
+		return str(self.id) + ' ' + self.employee_id.fname + ' ' +  self.customer_id.fname + ' ' + str(self.recv_date) + str(self.ship_date) 
 
 
 class Order_Part_Quantity(models.Model):
@@ -48,4 +48,4 @@ class Order_Part_Quantity(models.Model):
 	part_no = models.ForeignKey(Part)
 
 	# def __str__(self):
-	# 	return self.
+		# return self.order_no + ' ' + str(self.part_quantity) + str(self.part_no)  
