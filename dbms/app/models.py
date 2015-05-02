@@ -2,27 +2,27 @@ from django.db import models
 
 # Create your models here.
 class Employee(models.Model):
-        employee_no = models.IntegerField(primary_key=True)
+#        employee_no = models.IntegerField(primary_key=True)
         fname = models.CharField(max_length=50, blank= False)
         lname = models.CharField(max_length = 50, blank= False)
-        zip = models.IntegerField(null = True)
+        zip_code = models.IntegerField(null = True)
 
 class Customer(models.Model):
-    customer_no = models.IntegerField(primary_key=True)
+#    customer_no = models.IntegerField(primary_key=True)
     fname = models.CharField(max_length=50, blank= False)
     lname = models.CharField(max_length = 50, blank= False)
-    zip = models.IntegerField(null = True)
+    zip_code = models.IntegerField(null = True)
 
 class Part(models.Model):
-    part_no = models.IntegerField(primary_key=True)
+#    part_no = models.IntegerField(primary_key=True)
     pname = models.CharField(max_length = 20,blank= False)
     price = models.IntegerField(blank= False)
     max_quantity = models.IntegerField(blank= False) #This is the stock quantity for every part
 
 class Order(models.Model):
-    order_no = models.IntegerField(primary_key = True)
-    employee = models.ForeignKey(Employee)
-    customer = models.ForeignKey(Customer)
+#    order_no = models.IntegerField(primary_key = True)
+    employee_id = models.ForeignKey(Employee)
+    customer_id = models.ForeignKey(Customer)
     recv_date = models.DateTimeField(blank = False)
     ship_date = models.DateTimeField(blank = False)
 
