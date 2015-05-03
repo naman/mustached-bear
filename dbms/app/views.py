@@ -144,13 +144,11 @@ def part_edit(request, pid):
 	return HttpResponseRedirect('/')
 
 def part_delete(request, pid):
-	Part.objects.get(pk=oid).delete()
+	Part.objects.get(pk=pid).delete()
 	return HttpResponseRedirect('/')
 
 def query(request):
-	# print request.read()
 	sql = request.read().replace("%22", '\"').replace("%3D", "=").replace("+", " ")[4:]
-	# print sql
 	cursor = connection.cursor()
 	cursor.execute(sql)
 	results = cursor.fetchall()
